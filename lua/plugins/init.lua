@@ -88,12 +88,12 @@ config = require 'plugins.config.toggleterm'
 --
 
 use {
-  'neovim/nvim-lspconfig',
-  config = require 'plugins.lsp'
+'neovim/nvim-lspconfig',
+config = require 'plugins.lsp'
 }
 use {
-  'hrsh7th/cmp-nvim-lsp',
-  config = require 'plugins.config.cmp'  
+'hrsh7th/cmp-nvim-lsp',
+config = require 'plugins.config.cmp'  
 }
 use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
@@ -116,9 +116,17 @@ use 'quangnguyen30192/cmp-nvim-ultisnips'
 use 'dcampos/nvim-snippy'
 use 'dcampos/cmp-snippy'
 
-  --
-  -----------------------------------------------
+--
+-----------------------------------------------
+--TREESITTER
+use {
+  'nvim-treesitter/nvim-treesitter',
+	run = ':TSUpdate',
+  config = require 'plugins.config.treesitter'
+}
 
+
+  
   if PACKER_BOOTSTRAP then
     require('packer').sync()
   end
