@@ -1,5 +1,6 @@
 local fn = vim.fn
 
+
 -- Automatically install packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -81,7 +82,46 @@ return packer.startup(function(use)
     tag = '*',
     config = require 'plugins.config.toggleterm' 
   }
+  --LSP------------------------------------------
+  --
 
+use {
+  'neovim/nvim-lspconfig',
+  config = require 'plugins.config.lsp'
+}
+--use 'hrsh7th/cmp-nvim-lsp'
+--use 'hrsh7th/cmp-buffer'
+--use 'hrsh7th/cmp-path'
+--use 'hrsh7th/cmp-cmdline'
+--use 'hrsh7th/nvim-cmp'
+
+-- For vsnip users.
+--use 'hrsh7th/cmp-vsnip'
+--use 'hrsh7th/vim-vsnip'
+
+-- For luasnip users.
+--use 'L3MON4D3/LuaSnip'
+--use 'saadparwaiz1/cmp_luasnip'
+
+-- For ultisnips users.
+--use 'SirVer/ultisnips'
+--use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+-- For snippy users.
+--use 'dcampos/nvim-snippy'
+--use 'dcampos/cmp-snippy'
+
+--snippets
+--use 'rafamadriz/friendly-snippets' 
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  -----------------------------------------------
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
