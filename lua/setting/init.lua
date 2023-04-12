@@ -14,7 +14,7 @@ vim.wo.signcolumn        = 'yes'
 vim.wo.cursorline        = true
 
 -- Behavior
-vim.o.hlsearch           = false
+vim.o.hlsearch           = true
 vim.o.ignorecase         = true                         -- Ignore case when using lowercase in search
 vim.o.smartcase          = true                         -- But don't ignore it when using upper case
 vim.o.smarttab           = true
@@ -38,3 +38,5 @@ vim.o.completeopt        = "menuone,noinsert,noselect"
 vim.o.wildmode           = "longest,full"              
 vim.o.updatetime         = 300                      
 vim.g.do_file_type_lua   = 1
+
+require 'setting.config.python3'
