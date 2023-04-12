@@ -109,6 +109,10 @@ return packer.startup(function(use)
 		config = require("plugins.config.comment"),
 	})
 
+	--CLOSE_BUFFER
+	--
+	use("ojroques/nvim-bufdel")
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
