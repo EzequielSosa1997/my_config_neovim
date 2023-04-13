@@ -93,14 +93,37 @@ return packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		config = require("plugins.lsp.null"),
 	}) -- Null ls is used for code formatting and pylint analysis
+
+	--
+	------------------------------------------------
+	--AUTOCOMPLETION
+	--
+
 	use({
 		"hrsh7th/nvim-cmp",
 		config = require("plugins.lsp.cmp"), -- Autocompletion plugins
 	})
 	use("L3MON4D3/LuaSnip")
 	use("hrsh7th/cmp-nvim-lsp") -- Autocompletion with LSPs
-	--
-	------------------------------------------------
+
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+
+	--For vsnip users.
+	use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/vim-vsnip")
+
+	--For luasnip users.
+	use("saadparwaiz1/cmp_luasnip")
+
+	--For ultisnips users.
+	use("SirVer/ultisnips")
+	use("quangnguyen30192/cmp-nvim-ultisnips")
+
+	--For snippy users.
+	use("dcampos/nvim-snippy")
+	use("dcampos/cmp-snippy")
 
 	--COMMENT
 	--
