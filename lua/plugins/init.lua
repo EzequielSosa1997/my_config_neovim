@@ -74,6 +74,11 @@ return packer.startup(function(use)
 		config = require("plugins.config.theme"),
 	})
 
+	use({
+		use("navarasu/onedark.nvim"),
+		config = require("plugins.config.theme"),
+	})
+
 	--TOGGLETERM
 	use({
 		"akinsho/toggleterm.nvim",
