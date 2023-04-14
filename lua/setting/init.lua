@@ -49,3 +49,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.gitgutter_enable = 1
 vim.opt.updatetime = 100
 vim.opt.clipboard = "unnamedplus"
+
+-- GITGUTTER
+vim.g.gitgutter_enable = 1
+vim.opt.updatetime = 100
