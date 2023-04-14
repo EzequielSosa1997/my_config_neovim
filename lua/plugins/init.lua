@@ -137,6 +137,9 @@ return packer.startup(function(use)
 		config = require("plugins.config.comment"),
 	})
 
+	--GITGUTTER
+	use("airblade/vim-gitgutter")
+
 	--CLOSE_BUFFER
 	--
 	use("ojroques/nvim-bufdel")
