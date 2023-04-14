@@ -42,3 +42,4 @@ vim.g.do_file_type_lua = 1
 vim.g.python3_host_prog = "/usr/bin/python3"
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
+vim.opt.clipboard = "unnamedplus"
