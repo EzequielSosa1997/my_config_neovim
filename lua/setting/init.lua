@@ -43,3 +43,7 @@ vim.g.python3_host_prog = "/usr/bin/python3"
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.opt.clipboard = "unnamedplus"
+
+-- GITGUTTER
+vim.g.gitgutter_enable = 1
+vim.opt.updatetime = 100
