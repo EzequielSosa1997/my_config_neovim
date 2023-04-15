@@ -1,21 +1,17 @@
-local M = require 'keymaps.lsp.lsp-mason'
-local ok, mason = pcall(require,'mason')
-local okManson, mason_lspconfig = pcall(require,"mason-lspconfig")
+local M = require("keymaps.lsp.lsp-mason")
+local ok, mason = pcall(require, "mason")
+local okManson, mason_lspconfig = pcall(require, "mason-lspconfig")
 
-if not ok then return end
-if not okManson then return end
+if not ok then
+	return
+end
+if not okManson then
+	return
+end
 
 local servers = {
-  pyright = {},
-  eslint = require 'plugins.lsp.lenguaje.linter',
-	bashls = {},
-	cssls = {},
-	html = {},
-	jsonls = {},
-	lemminx = {},
-	gopls = {},
-	lua_ls = require 'plugins.lsp.lenguaje.lua'
-
+	eslint = require("plugins.lsp.lenguaje.linter"),
+	lua_ls = require("plugins.lsp.lenguaje.lua"),
 }
 
 mason.setup()

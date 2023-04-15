@@ -99,10 +99,12 @@ return packer.startup(function(use)
 		config = require("plugins.lsp.null"),
 	}) -- Null ls is used for code formatting and pylint analysis
 
-	--
-	------------------------------------------------
-	--AUTOCOMPLETION
-	--
+	--JAVA---------JTDLS-----------------------------------------
+
+	use({
+		"mfussenegger/nvim-jdtls",
+		config = require("plugins.lsp.lenguaje.java"),
+	})
 
 	use({
 		"hrsh7th/nvim-cmp",
