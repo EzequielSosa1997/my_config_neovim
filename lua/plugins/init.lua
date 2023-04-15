@@ -75,7 +75,7 @@ return packer.startup(function(use)
 	})
 
 	use({
-		use("navarasu/onedark.nvim"),
+		"navarasu/onedark.nvim",
 		config = require("plugins.config.theme"),
 	})
 
@@ -143,6 +143,10 @@ return packer.startup(function(use)
 	--CLOSE_BUFFER
 	--
 	use("ojroques/nvim-bufdel")
+
+	--DELIMITE [] {}
+	--
+	use("Raimondi/delimitMate")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
