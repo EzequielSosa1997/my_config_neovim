@@ -38,6 +38,9 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 
+	--NVIM-WEB-DEVICONS
+	use("nvim-tree/nvim-web-devicons")
+
 	--NEO-TREE
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
@@ -71,13 +74,19 @@ return packer.startup(function(use)
 	--THEME
 	use({
 		"folke/tokyonight.nvim",
-		config = require("plugins.config.theme"),
 	})
 
 	use({
 		"navarasu/onedark.nvim",
 		config = require("plugins.config.theme"),
 	})
+
+	use({
+		"projekt0n/github-nvim-theme",
+		tag = "v0.0.7",
+	})
+
+	use("Mofiqul/vscode.nvim")
 
 	--TOGGLETERM
 	use({
@@ -102,9 +111,31 @@ return packer.startup(function(use)
 	--JAVA---------JTDLS-----------------------------------------
 
 	use({
-		"mfussenegger/nvim-jdtls",
-		config = require("plugins.lsp.lenguaje.java"),
+		"ray-x/lsp_signature.nvim",
 	})
+
+	use({
+		"mfussenegger/nvim-jdtls",
+		config = require("plugins.jdtls"),
+	})
+
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = {
+			require("plugins.jdtls.config.lspsaga"),
+			require("keymaps.jdtls.lspsaga"),
+		},
+	})
+
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		config = require("plugins.config.treesitter"),
+	})
+	--assuming
+
+	-------------------------------------------------------------------
 
 	use({
 		"hrsh7th/nvim-cmp",
