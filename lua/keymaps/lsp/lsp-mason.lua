@@ -1,3 +1,9 @@
+local okNavic, navic = pcall(require, "nvim-navic")
+
+if not okNavic then
+	return
+end
+
 vim.g.mapleader = " "
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -11,7 +17,11 @@ end
 
 M.capabilities = cmp.default_capabilities(capabilities)
 
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
+
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
