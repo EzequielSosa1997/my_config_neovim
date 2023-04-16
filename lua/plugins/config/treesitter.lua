@@ -39,7 +39,7 @@ treesitter.setup({
 	},
 	-- ensure_installed = {"java", "rust", "python", "lua", "go", "html", "json", "sql", "dockerfile", "yaml", "css", "javascript", "typescript"},
 	highlight = {
-		enable = false,
+		enable = true,
 	},
 	rainbow = {
 		colors = {
