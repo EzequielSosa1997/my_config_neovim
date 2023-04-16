@@ -1,3 +1,9 @@
+local okNavic, navic = pcall(require, "nvim-navic")
+
+if not okNavic then
+	return
+end
+
 local keymap = require("keymaps.lsp.lsp-cmp")
 local M = {}
 local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
@@ -34,6 +40,9 @@ local function set_hover_border(client)
 end
 
 M.on_attach = function(client, bufnr)
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
 	set_signature_helper(client, bufnr)
 	set_hover_border(client)
 end
