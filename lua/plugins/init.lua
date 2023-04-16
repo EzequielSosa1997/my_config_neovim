@@ -187,6 +187,13 @@ return packer.startup(function(use)
 	--
 	use("Raimondi/delimitMate")
 
+	--TEST
+	--
+	use({
+		"michaelb/sniprun",
+		run = "bash install.sh",
+	})
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
