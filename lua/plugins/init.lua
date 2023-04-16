@@ -106,7 +106,13 @@ return packer.startup(function(use)
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = require("plugins.lsp.null"),
-	}) -- Null ls is used for code formatting and pylint analysis
+	}) -- Null ls is used for code formatting and pylint analysiso
+
+	--ICON-navic- LSP
+	use({
+		"SmiteshP/nvim-navic",
+		config = require("plugins.lsp.navic"),
+	})
 
 	--JAVA---------JTDLS-----------------------------------------
 
