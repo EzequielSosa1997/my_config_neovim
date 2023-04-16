@@ -4,11 +4,9 @@ if not _one then
 	return
 end
 
-vim.cmd([[colorscheme onedark]])
-
 onedark.setup({
 	-- Main options --
-	style = "cool", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -45,3 +43,5 @@ onedark.setup({
 		background = true, -- use background color for virtual text
 	},
 })
+
+vim.cmd([[colorscheme onedark]])
