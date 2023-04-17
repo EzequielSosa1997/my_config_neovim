@@ -88,7 +88,7 @@ return packer.startup(function(use)
 		tag = "v0.0.7",
 	})
 
-	use("Mofiqul/vscode.nvim")
+	use({ "Mofiqul/vscode.nvim" })
 
 	--TOGGLETERM
 	use({
@@ -100,16 +100,18 @@ return packer.startup(function(use)
 	--LSP-MASON-NULL---------------------------------
 	--
 	use("neovim/nvim-lspconfig")
+
 	use({
 		"williamboman/mason.nvim",
 		config = require("plugins.lsp.mason"),
 	})
-	use("williamboman/mason-lspconfig.nvim")
+
+	use({ "williamboman/mason-lspconfig.nvim" })
+
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = require("plugins.lsp.null"),
-	}) -- Null ls is used for code formatting and pylint analysiso
-
+	})
 	--ICON-navic- LSP
 	use({
 		"SmiteshP/nvim-navic",
@@ -127,6 +129,14 @@ return packer.startup(function(use)
 		config = require("plugins.jdtls"),
 	})
 
+	--TEST-BREAKPOINT--------------------------------------------
+
+	use({
+		"mfussenegger/nvim-dap",
+	})
+
+	-------------------------------------------------------------
+
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
@@ -136,12 +146,18 @@ return packer.startup(function(use)
 		},
 	})
 
+	----------------------------------------------------------------
+
+	--TREESSITTER-----------------------------------------------------
+
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = require("plugins.config.treesitter"),
 	})
-	--assuming
+	--BRACKETS PARENTHESIS KEY
+
+	use({ "mrjones2014/nvim-ts-rainbow" })
 
 	-------------------------------------------------------------------
 
@@ -149,27 +165,34 @@ return packer.startup(function(use)
 		"hrsh7th/nvim-cmp",
 		config = require("plugins.lsp.cmp"), -- Autocompletion plugins
 	})
-	use("L3MON4D3/LuaSnip")
-	use("hrsh7th/cmp-nvim-lsp") -- Autocompletion with LSPs
 
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
+	use({ "L3MON4D3/LuaSnip" })
+
+	use({ "hrsh7th/cmp-nvim-lsp" }) -- Autocompletion with LSPs
+
+	use({ "hrsh7th/cmp-buffer" })
+
+	use({ "hrsh7th/cmp-path" })
+
+	use({ "hrsh7th/cmp-cmdline" })
 
 	--For vsnip users.
-	use("hrsh7th/cmp-vsnip")
-	use("hrsh7th/vim-vsnip")
+
+	use({ "hrsh7th/cmp-vsnip" })
+
+	use({ "hrsh7th/vim-vsnip" })
 
 	--For luasnip users.
-	use("saadparwaiz1/cmp_luasnip")
+	use({ "saadparwaiz1/cmp_luasnip" })
 
 	--For ultisnips users.
-	use("SirVer/ultisnips")
-	use("quangnguyen30192/cmp-nvim-ultisnips")
+	use({ "SirVer/ultisnips" })
+	use({ "quangnguyen30192/cmp-nvim-ultisnips" })
 
 	--For snippy users.
-	use("dcampos/nvim-snippy")
-	use("dcampos/cmp-snippy")
+	use({ "dcampos/nvim-snippy" })
+
+	use({ "dcampos/cmp-snippy" })
 
 	--COMMENT
 	--
@@ -179,15 +202,15 @@ return packer.startup(function(use)
 	})
 
 	--GITGUTTER
-	use("airblade/vim-gitgutter")
+	use({ "airblade/vim-gitgutter" })
 
 	--CLOSE_BUFFER
 	--
-	use("ojroques/nvim-bufdel")
+	use({ "ojroques/nvim-bufdel" })
 
 	--DELIMITE [] {}
 	--
-	use("Raimondi/delimitMate")
+	use({ "Raimondi/delimitMate" })
 
 	--TEST
 	--
