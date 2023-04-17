@@ -42,14 +42,13 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 
 	--NEO-TREE
+	--
+	--DEPENDECIES---------------------
+	use({ "MunifTanjim/nui.nvim" })
+	-----------------------------------
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
 		config = require("plugins.config.neotree"),
 	})
 
@@ -66,11 +65,14 @@ return packer.startup(function(use)
 		config = require("plugins.config.lualine"),
 	})
 
-	--TELESCOPE
+	--TELESCOPE----------------------------------------
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
+		config = require("plugins.config.telescope"),
 	})
+
+	---------------------------------------------------
 	--THEME
 	use({
 		"folke/tokyonight.nvim",
