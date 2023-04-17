@@ -90,6 +90,8 @@ return packer.startup(function(use)
 
 	use({ "Mofiqul/vscode.nvim" })
 
+	use({ "rebelot/kanagawa.nvim" })
+
 	--TOGGLETERM
 	use({
 		"akinsho/toggleterm.nvim",
