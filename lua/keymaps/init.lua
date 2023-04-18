@@ -25,3 +25,9 @@ set("i", "<C-s>", "<cmd>w<cr>", default_opts)
 set("", "<C-x>", "<cmd>wq<cr>", default_opts)
 set("", "<A-q>", "<cmd>q<cr>", default_opts)
 set("n", "<leader>s", "<cmd>w<cr>", default_opts)
+
+--NAVEGATION-WINDOWS
+set("n", "<C-l>", "<c-w>l", default_opts)
+set("n", "<C-h>", "<c-w>h", default_opts)
+set("n", "<C-k>", "<c-w>k", default_opts)
+set("n", "<C-j>", "<c-w>j", default_opts)
