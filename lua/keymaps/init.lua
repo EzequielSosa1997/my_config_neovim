@@ -7,6 +7,7 @@ require("keymaps.config.neotree")
 require("keymaps.config.bufferline")
 require("keymaps.config.telescope")
 require("keymaps.config.toggleterm")
+require("keymaps.config.rest-server")
 
 --NAVEGATION
 set("", "<Left>", "<none>", default_opts)
