@@ -226,6 +226,13 @@ return packer.startup(function(use)
 		config = require("plugins.config.autosave"),
 	})
 
+	--REST-SERVER
+	--
+	use({
+		"rest-nvim/rest.nvim",
+		config = require("plugins.config.rest-server"),
+	})
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
