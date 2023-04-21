@@ -1,3 +1,7 @@
+--diagnostic
+
+require("setting.diagnostic")
+
 -- Visual
 vim.o.conceallevel = 0 -- Don't hide quotes in markdown
 vim.o.cmdheight = 1
