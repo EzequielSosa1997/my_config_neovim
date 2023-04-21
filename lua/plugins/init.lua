@@ -189,12 +189,23 @@ return packer.startup(function(use)
 
 	--For ultisnips users.
 	use({ "SirVer/ultisnips" })
+
 	use({ "quangnguyen30192/cmp-nvim-ultisnips" })
 
 	--For snippy users.
 	use({ "dcampos/nvim-snippy" })
 
 	use({ "dcampos/cmp-snippy" })
+
+	use({ "honza/vim-snippets" })
+
+	use({ "hrsh7th/cmp-calc" })
+
+	use({ "f3fora/cmp-spell" })
+
+	use({ "tamago324/cmp-zsh" })
+
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
 
 	--COMMENT
 	--
