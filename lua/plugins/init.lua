@@ -244,6 +244,10 @@ return packer.startup(function(use)
 		config = require("plugins.config.rest-server"),
 	})
 
+	--MULT-CURSOR
+	--
+	use({ "mg979/vim-visual-multi", branch = "master" })
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
