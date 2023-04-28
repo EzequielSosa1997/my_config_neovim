@@ -215,7 +215,7 @@ return packer.startup(function(use)
 	})
 
 	--GITGUTTER
-	use({ "airblade/vim-gitgutter" })
+	use({ "airblade/vim-gitgutter", config = require("plugins.config.gitgutter") })
 
 	--CLOSE_BUFFER
 	--
