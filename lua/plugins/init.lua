@@ -214,8 +214,13 @@ return packer.startup(function(use)
 		config = require("plugins.config.comment"),
 	})
 
+	--GIT--------------------------------------------------------
 	--GITGUTTER
 	use({ "airblade/vim-gitgutter", config = require("plugins.config.gitgutter") })
+
+	--FUGITIVE
+	use({ "tpope/vim-fugitive" })
+	-------------------------------------------------------------
 
 	--CLOSE_BUFFER
 	--
