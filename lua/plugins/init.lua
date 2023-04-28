@@ -232,10 +232,10 @@ return packer.startup(function(use)
 		run = "bash install.sh",
 	})
 
-	use({
-		"Pocco81/auto-save.nvim",
-		config = require("plugins.config.autosave"),
-	})
+	-- use({
+	-- 	"Pocco81/auto-save.nvim",
+	-- 	config = require("plugins.config.autosave"),
+	-- })
 
 	--REST-SERVER
 	--
