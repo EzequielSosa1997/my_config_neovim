@@ -1,6 +1,22 @@
-vim.g.mapleader = " "
-local set = vim.api.nvim_set_keymap
-local default_opts = { noremap = true, silent = true }
-set("n", "<leader>g", "<cmd>G<cr>", default_opts)
-set("n", "<leader>gp", "<cmd>G push<cr>", default_opts)
-set("n", "<leader>gl", "<cmd>G pull<cr>", default_opts)
+local okWich, with_key = pcall(require, "which-key")
+local addCommand = require("keymaps.config.whitch-key")
+
+if not okWich then
+	return
+end
+
+with_key.register({
+	g = {
+		name = "GIT",
+		g = { addCommand("G"), "Open menu" },
+		p = { addCommand("G push"), "Git push" },
+		l = { addCommand("G push"), "Git pull" },
+		f = {
+			name = "MORE OPTIONS",
+			c = { addCommand("Telescope git_commits"), "Find Commits" },
+			b = { addCommand("Telescope git_branches"), "Find Branches" },
+			f = { addCommand("Telescope git_files"), "Find Files to Git" },
+			s = { addCommand("Telescope git_status"), "Find Files modify" },
+		},
+	},
+}, { prefix = "<leader>" })
