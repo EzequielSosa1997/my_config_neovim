@@ -253,6 +253,10 @@ return packer.startup(function(use)
 	--
 	use({ "mg979/vim-visual-multi", branch = "master" })
 
+	--KEYMAP
+	--
+	use({ "folke/which-key.nvim", config = require("plugins.config.which_key") })
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
