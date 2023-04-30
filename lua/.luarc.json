@@ -1,7 +1,3 @@
 {
-    "diagnostics.globals": [
-        "vim",
-        "sumWindos",
-        "restWindos"
-    ]
+  "diagnostics.globals": ["vim", "restWindow", "sumWindow"]
 }
