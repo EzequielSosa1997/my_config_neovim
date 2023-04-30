@@ -1,14 +1,16 @@
-local ok,builtin = pcall(require,'telescope.builtin')
+local okWich, with_key = pcall(require, "which-key")
+local addCommand = require("keymaps.config.whitch-key")
 
-if not ok then
-  return
-end 
+if not okWich then
+	return
+end
 
-local set = vim.api.nvim_set_keymap
-local default_opts = { noremap = true, silent = true }
-local expr_opts = { noremap = true, expr = true, silent = true }
-
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+with_key.register({
+	f = {
+		name = "TELESCOPE",
+		f = { addCommand("Telescope find_files"), "find file" },
+		h = { addCommand("Telescope help_tags"), "find help" },
+		g = { addCommand("Telescope live_grep"), "find live grep" },
+		b = { addCommand("Telescope buffers"), "find buffers" },
+	},
+}, { prefix = "<leader>" })
