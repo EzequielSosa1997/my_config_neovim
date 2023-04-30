@@ -4,11 +4,15 @@ if not ok then
 	return
 end
 
+local function line_count()
+	return vim.api.nvim_buf_line_count(0)
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = theme,
-		component_separators = { left = "", right = "" },
+		component_separators = { left = "┃", right = "┃" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
@@ -24,12 +28,19 @@ lualine.setup({
 		},
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
-		lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_a = { "branch" },
+		lualine_b = { { "diff", icon = "" }, "diagnostics" },
+		lualine_x = {},
+		lualine_y = { "filetype" },
+		lualine_z = {
+			"fileformat",
+			{ "os.date('%H:%M %a %B %y')" },
+			{ "filesize" },
+			"location",
+			"progress",
+			{ line_count, icon = "﬘" },
+			"mode",
+		},
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -42,5 +53,5 @@ lualine.setup({
 	tabline = {},
 	winbar = {},
 	inactive_winbar = {},
-	extensions = {},
+	extensions = { "nvim-tree" },
 })
