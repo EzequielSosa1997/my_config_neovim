@@ -9,7 +9,7 @@ require("keymaps.config.telescope")
 require("keymaps.config.toggleterm")
 require("keymaps.config.rest-server")
 require("keymaps.config.git-fugitive")
-
+local startWidth = require("keymaps.function.resizeWindows")
 --NAVEGATION
 set("", "<Left>", "<none>", default_opts)
 set("", "<Right>", "<none>", default_opts)
@@ -32,3 +32,10 @@ set("n", "<C-l>", "<c-w>l", default_opts)
 set("n", "<C-h>", "<c-w>h", default_opts)
 set("n", "<C-k>", "<c-w>k", default_opts)
 set("n", "<C-j>", "<c-w>j", default_opts)
+
+--TERMINAL
+vim.api.nvim_set_keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true })
+set("n", "<C-t>", "<cmd>terminal<cr><cmd>vertical resize" .. tostring(startWidth) .. "<cr>", default_opts)
+set("n", "<leader>sd", "<cmd>w | source % <cr>", default_opts)
+set("n", "<leader>h", ":lua sumWindow()<cr>", default_opts)
+set("n", "<leader>l", ":lua restWindow()<cr>", default_opts)
