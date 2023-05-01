@@ -137,19 +137,6 @@ return packer.startup(function(use)
 		"mfussenegger/nvim-dap",
 	})
 
-	-------------------------------------------------------------
-
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = {
-			require("plugins.jdtls.config.lspsaga"),
-			require("keymaps.jdtls.lspsaga"),
-		},
-	})
-
-	----------------------------------------------------------------
-
 	--TREESSITTER-----------------------------------------------------
 
 	use({
