@@ -1,21 +1,16 @@
-local okNavic, navic = pcall(require, "nvim-navic")
 local okWich, with_key = pcall(require, "which-key")
 local ok, cmp = pcall(require, "cmp_nvim_lsp")
 local addCommand = require("keymaps.config.whitch-key")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local M = {}
 
-if not ok or not okWich or not okNavic then
+if not ok or not okWich then
 	return
 end
 
 M.capabilities = cmp.default_capabilities(capabilities)
 
 M.on_attach = function(client, bufnr)
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
-	end
-
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 		vim.lsp.buf.format()
 	end, { desc = "Format current buffer with LSP" })
