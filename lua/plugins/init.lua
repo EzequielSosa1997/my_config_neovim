@@ -240,6 +240,10 @@ return packer.startup(function(use)
 	--
 	use({ "folke/which-key.nvim", config = require("plugins.config.which_key") })
 
+	--UNDOTREE
+	--
+	use({ "mbbill/undotree" })
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
