@@ -244,6 +244,10 @@ return packer.startup(function(use)
 	--
 	use({ "mbbill/undotree" })
 
+	--SURROUND
+	--
+	use({ "tpope/vim-surround" })
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
