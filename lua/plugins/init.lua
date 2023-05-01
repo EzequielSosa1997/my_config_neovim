@@ -133,14 +133,15 @@ return packer.startup(function(use)
 	})
 
 	--TREESSITTER-----------------------------------------------------
-
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = require("plugins.config.treesitter"),
 	})
-	--BRACKETS PARENTHESIS KEY
+	--TREESSITTER-CONTEXT
+	use({ "nvim-treesitter/nvim-treesitter-context", config = require("plugins.config.treesitter.context") })
 
+	--BRACKETS PARENTHESIS KEY
 	use({ "mrjones2014/nvim-ts-rainbow" })
 
 	-------------------------------------------------------------------
