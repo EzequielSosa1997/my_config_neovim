@@ -1,16 +1,16 @@
 local okNavic, navic = pcall(require, "nvim-navic")
+local ok, cmp = pcall(require, "cmp_nvim_lsp")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-if not okNavic then
+if not okNavic or not ok then
 	return
 end
 
-local keymap = require("keymaps.lsp.lsp-cmp")
 local M = {}
 local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 local signature_cfg = {
 	bind = true,
 	doc_lines = 2,
-
 	floating_window = true,
 	hint_enable = false,
 	hint_prefix = "➤  ",
@@ -18,7 +18,6 @@ local signature_cfg = {
 	use_lspsaga = false,
 	hi_parameter = "Search",
 	max_height = 12,
-
 	max_width = 120,
 	handler_opts = {
 		border = "single",
@@ -45,8 +44,11 @@ M.on_attach = function(client, bufnr)
 	end
 	set_signature_helper(client, bufnr)
 	set_hover_border(client)
+	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+		vim.lsp.buf.format()
+	end, { desc = "Format current buffer with LSP" })
 end
 
-M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+M.capabilities = cmp.default_capabilities(capabilities)
 
 return M
