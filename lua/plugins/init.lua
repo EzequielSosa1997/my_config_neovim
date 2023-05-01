@@ -114,11 +114,6 @@ return packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		config = require("plugins.lsp.null"),
 	})
-	--ICON-navic- LSP
-	use({
-		"SmiteshP/nvim-navic",
-		config = require("plugins.lsp.navic"),
-	})
 
 	--JAVA---------JTDLS-----------------------------------------
 
