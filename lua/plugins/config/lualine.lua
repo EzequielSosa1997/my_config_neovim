@@ -1,5 +1,6 @@
 local ok, lualine = pcall(require, "lualine")
 local theme = require("plugins.config.theme")
+
 if not ok then
 	return
 end
@@ -16,7 +17,20 @@ lualine.setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
-			winbar = {},
+			winbar = {
+				"help",
+				"startify",
+				"dashboard",
+				"packer",
+				"neogitstatus",
+				"NvimTree",
+				"Trouble",
+				"alpha",
+				"lir",
+				"Outline",
+				"spectre_panel",
+				"toggleterm",
+			},
 		},
 		ignore_focus = {},
 		always_divide_middle = true,
