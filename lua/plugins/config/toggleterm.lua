@@ -1,24 +1,35 @@
 local ok, toggleterm = pcall(require, "toggleterm")
 
 if not ok then
-    return
+	return
 end
 
-toggleterm.setup {
+toggleterm.setup({
+	size = 10,
+	open_mapping = [[<C-\>]],
+	insert_mappings = false,
+	shading_factor = 2,
+	shade_filetypes = {},
+	shade_terminals = true,
+	persist_size = false,
+	start_in_insert = true,
+	direction = "horizontal",
+	close_on_exit = true,
+	shell = vim.o.shell,
+	float_opts = {
+		border = "curved",
+		winblend = 0,
+		highlights = {
+			border = "Normal",
+			background = "Normal",
+		},
+	},
+})
 
-    -- size can be a number or function which is passed the current terminal
-    --size = 20 |
-    size = function(term)
-        if term.direction == "horizontal" then
-            return 15
-        elseif term.direction == "vertical" then
-            return vim.o.columns * 0.4
-        end
-    end,
-    open_mapping = [[<leader>t]],
-    insert_mappings = false,
-    --direction = 'vertical' | 'horizontal' | 'tab' | 'float',
-    direction = "horizontal",
-    close_on_exit = true, -- close the terminal window when the process exits
-    shell = "/usr/bin/zsh", -- change the default shell
-}
+local Terminal = require("toggleterm.terminal").Terminal
+
+local node = Terminal:new({ cmd = "node", hidden = true })
+
+function _NODE_TOGGLE()
+	node:toggle()
+end
