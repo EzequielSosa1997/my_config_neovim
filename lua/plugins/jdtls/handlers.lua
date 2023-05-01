@@ -1,8 +1,7 @@
-local okNavic, navic = pcall(require, "nvim-navic")
 local ok, cmp = pcall(require, "cmp_nvim_lsp")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-if not okNavic or not ok then
+if not ok then
 	return
 end
 
@@ -39,9 +38,6 @@ local function set_hover_border(client)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
-	end
 	set_signature_helper(client, bufnr)
 	set_hover_border(client)
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
