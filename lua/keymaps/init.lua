@@ -10,6 +10,7 @@ require("keymaps.config.toggleterm")
 require("keymaps.config.rest-server")
 require("keymaps.config.git-fugitive")
 local startWidth = require("keymaps.function.resizeWindows")
+require("keymaps.config.undotree")
 --NAVEGATION
 set("", "<Left>", "<none>", default_opts)
 set("", "<Right>", "<none>", default_opts)
