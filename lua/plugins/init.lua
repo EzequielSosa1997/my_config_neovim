@@ -41,17 +41,9 @@ return packer.startup(function(use)
 	--NVIM-WEB-DEVICONS
 	use("nvim-tree/nvim-web-devicons")
 
-	--NEO-TREE
-	--
 	--DEPENDECIES---------------------
 	use({ "MunifTanjim/nui.nvim" })
 	-----------------------------------
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		config = require("plugins.config.neotree"),
-	})
-
 	--BUFFER
 	use({
 		"akinsho/bufferline.nvim",
@@ -247,6 +239,13 @@ return packer.startup(function(use)
 	--SURROUND
 	--
 	use({ "tpope/vim-surround" })
+
+	--NVIM-RANGER
+	--
+	use({
+		"kevinhwang91/rnvimr",
+		config = require("plugins.config.ranger"),
+	})
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
