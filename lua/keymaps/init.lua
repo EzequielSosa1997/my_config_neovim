@@ -3,7 +3,7 @@ local default_opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, expr = true, silent = true }
 vim.g.mapleader = " "
 
-require("keymaps.config.neotree")
+require("keymaps.config.ranger")
 require("keymaps.config.bufferline")
 require("keymaps.config.telescope")
 require("keymaps.config.toggleterm")
