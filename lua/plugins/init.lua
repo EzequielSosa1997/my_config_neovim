@@ -190,11 +190,15 @@ return packer.startup(function(use)
 	})
 
 	--GIT--------------------------------------------------------
-	--GITGUTTER
-	use({ "airblade/vim-gitgutter", config = require("plugins.config.gitgutter") })
 
 	--FUGITIVE
 	use({ "tpope/vim-fugitive" })
+
+	--GITSIGNS
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = require("plugins.config.gitsigns"),
+	})
 	-------------------------------------------------------------
 
 	--CLOSE_BUFFER
