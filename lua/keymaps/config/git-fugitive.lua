@@ -12,7 +12,7 @@ with_key.register({
 		p = { addCommand("G push"), "Git push" },
 		l = { addCommand("G push"), "Git pull" },
 		f = {
-			name = "MORE OPTIONS",
+			name = "TELESCOPE",
 			c = { addCommand("Telescope git_commits"), "Find Commits" },
 			b = { addCommand("Telescope git_branches"), "Find Branches" },
 			f = { addCommand("Telescope git_files"), "Find Files to Git" },
