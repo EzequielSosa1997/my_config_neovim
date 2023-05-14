@@ -258,6 +258,13 @@ return packer.startup(function(use)
 		config = require("plugins.config.zen-mode"),
 	})
 
+	--INDENT
+	--
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = require("plugins.config.indent"),
+	})
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
