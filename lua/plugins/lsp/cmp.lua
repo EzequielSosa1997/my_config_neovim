@@ -76,13 +76,13 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		-- For ultisnips users
-		{ name = "ultisnips" },
+		-- { name = "ultisnips" },
 		-- For vsnip users, uncomment the following.
-		{ name = "vsnip" },
+		-- { name = "vsnip" },
 		-- For luasnip users, uncomment the following.
-		{ name = "luasnip" },
+		-- { name = "luasnip" },
 		-- For snippy users, uncomment the following.
-		{ name = "snippy" },
+		-- { name = "snippy" },
 	}, {
 		{ name = "buffer" },
 	}, {
