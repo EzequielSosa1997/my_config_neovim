@@ -41,17 +41,9 @@ return packer.startup(function(use)
 	--NVIM-WEB-DEVICONS
 	use("nvim-tree/nvim-web-devicons")
 
-	--NEO-TREE
-	--
 	--DEPENDECIES---------------------
 	use({ "MunifTanjim/nui.nvim" })
 	-----------------------------------
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		config = require("plugins.config.neotree"),
-	})
-
 	--BUFFER
 	use({
 		"akinsho/bufferline.nvim",
@@ -198,11 +190,15 @@ return packer.startup(function(use)
 	})
 
 	--GIT--------------------------------------------------------
-	--GITGUTTER
-	use({ "airblade/vim-gitgutter", config = require("plugins.config.gitgutter") })
 
 	--FUGITIVE
 	use({ "tpope/vim-fugitive" })
+
+	--GITSIGNS
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = require("plugins.config.gitsigns"),
+	})
 	-------------------------------------------------------------
 
 	--CLOSE_BUFFER
@@ -244,6 +240,42 @@ return packer.startup(function(use)
 	--
 	use({ "mbbill/undotree" })
 
+	--SURROUND
+	--
+	use({ "tpope/vim-surround" })
+
+	--NVIM-RANGER
+	--
+	use({
+		"kevinhwang91/rnvimr",
+		config = require("plugins.config.ranger"),
+	})
+
+	--ZEN-MODE
+	--
+	use({
+		"folke/zen-mode.nvim",
+		config = require("plugins.config.zen-mode"),
+	})
+
+	--INDENT
+	--
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = require("plugins.config.indent"),
+	})
+
+	--DATABASE
+	--
+	use({
+		"kristijanhusak/vim-dadbod-ui",
+		config = require("plugins.config.database"),
+		require = {},
+	})
+	use({ "tpope/vim-dadbod" })
+
+	use({ "kristijanhusak/vim-dadbod-completion" })
+	use({ "tpope/vim-dotenv" })
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

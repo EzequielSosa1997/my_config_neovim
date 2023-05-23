@@ -3,7 +3,7 @@ local default_opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, expr = true, silent = true }
 vim.g.mapleader = " "
 
-require("keymaps.config.neotree")
+require("keymaps.config.ranger")
 require("keymaps.config.bufferline")
 require("keymaps.config.telescope")
 require("keymaps.config.toggleterm")
@@ -11,6 +11,7 @@ require("keymaps.config.rest-server")
 require("keymaps.config.git-fugitive")
 local startWidth = require("keymaps.function.resizeWindows")
 require("keymaps.config.undotree")
+require("keymaps.config.gitsigns")
 --NAVEGATION
 set("", "<Left>", "<none>", default_opts)
 set("", "<Right>", "<none>", default_opts)
