@@ -265,6 +265,17 @@ return packer.startup(function(use)
 		config = require("plugins.config.indent"),
 	})
 
+	--DATABASE
+	--
+	use({
+		"kristijanhusak/vim-dadbod-ui",
+		config = require("plugins.config.database"),
+		require = {},
+	})
+	use({ "tpope/vim-dadbod" })
+
+	use({ "kristijanhusak/vim-dadbod-completion" })
+	use({ "tpope/vim-dotenv" })
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
