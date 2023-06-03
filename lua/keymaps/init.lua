@@ -10,6 +10,7 @@ require("keymaps.config.toggleterm")
 require("keymaps.config.rest-server")
 require("keymaps.config.git-fugitive")
 local startWidth = require("keymaps.function.resizeWindows")
+require("keymaps.function.splitHorizontal")
 require("keymaps.config.undotree")
 require("keymaps.config.gitsigns")
 --NAVEGATION
@@ -48,3 +49,5 @@ set(
 set("n", "<leader>sd", "<cmd>w | source % <cr>", default_opts)
 set("n", "<leader>h", ":lua sumWindow()<cr>", default_opts)
 set("n", "<leader>l", ":lua restWindow()<cr>", default_opts)
+set("n", "<leader>j", ":lua restWindowHorizotal()<cr>", default_opts)
+set("n", "<leader>k", ":lua sumWindowHorizotal()<cr>", default_opts)
