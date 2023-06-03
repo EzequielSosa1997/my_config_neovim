@@ -6,5 +6,5 @@ if not okWich then
 end
 
 with_key.register({
-	e = { addCommand("RnvimrToggle"), "RANGER" },
+	e = { addCommand("NeoTreeFloat"), "NEOTREE" },
 }, { prefix = "<leader>" })
