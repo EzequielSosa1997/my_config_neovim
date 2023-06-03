@@ -247,8 +247,9 @@ return packer.startup(function(use)
 	--NVIM-RANGER
 	--
 	use({
-		"kevinhwang91/rnvimr",
-		config = require("plugins.config.ranger"),
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		config = require("plugins.config.neotree"),
 	})
 
 	--ZEN-MODE
