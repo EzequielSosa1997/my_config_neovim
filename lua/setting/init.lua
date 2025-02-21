@@ -53,4 +53,18 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.g.gitgutter_enable = 1
 vim.opt.updatetime = 100
-vim.opt.clipboard = "unnamedplus"
+
+vim.opt.clipboard:append("unnamedplus")
+
+vim.g.clipboard = {
+  name = "file",
+  copy = {
+    ["+"] = "tee /home/ubuntu/.nvim_clipboard.txt",
+    ["*"] = "tee /home/ubuntu/.nvim_clipboard.txt",
+  },
+  paste = {
+    ["+"] = "cat /home/ubuntu/.nvim_clipboard.txt",
+    ["*"] = "cat /home/ubuntu/.nvim_clipboard.txt",
+  },
+  cache_enabled = 0,
+}
