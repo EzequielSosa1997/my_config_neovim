@@ -1,18 +1,16 @@
 local set = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
-local expr_opts = { noremap = true, expr = true, silent = true }
 vim.g.mapleader = " "
 
-require("keymaps.config.neotree")
 require("keymaps.config.bufferline")
 require("keymaps.config.telescope")
 require("keymaps.config.toggleterm")
-require("keymaps.config.rest-server")
+require("keymaps.config.api-rest")
 require("keymaps.config.git-fugitive")
-local startWidth = require("keymaps.function.resizeWindows")
-require("keymaps.function.splitHorizontal")
-require("keymaps.config.undotree")
 require("keymaps.config.gitsigns")
+
+local startWidth = require("keymaps.function.resizeWindows")
+
 --NAVEGATION
 set("", "<Left>", "<none>", default_opts)
 set("", "<Right>", "<none>", default_opts)
@@ -49,5 +47,3 @@ set(
 set("n", "<leader>sd", "<cmd>w | source % <cr>", default_opts)
 set("n", "<leader>h", ":lua sumWindow()<cr>", default_opts)
 set("n", "<leader>l", ":lua restWindow()<cr>", default_opts)
-set("n", "<leader>j", ":lua restWindowHorizotal()<cr>", default_opts)
-set("n", "<leader>k", ":lua sumWindowHorizotal()<cr>", default_opts)

@@ -5,13 +5,9 @@ if not okWich then
 	return
 end
 
-with_key.register({
-	g = {
-		s = {
-			name = "GITSINGS",
-			t = { addCommand("Gitsigns toggle_current_line_blame"), "Prev line commit" },
-			p = { addCommand("Gitsigns preview_hunk"), "Prev Hunk uncommit" },
-			b = { addCommand("Gitsigns blame_line"), "Prev toggle commit" },
-		},
-	},
+with_key.add({
+  { "<leader>g", group = "GITSINGS" },  
+  { "<leader>gt", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Prev line commit" },
+  { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Prev Hunk uncommit" },
+  { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Prev toggle commit" },
 }, { prefix = "<leader>" })

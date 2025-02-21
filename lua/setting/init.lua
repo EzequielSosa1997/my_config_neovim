@@ -10,13 +10,14 @@ vim.o.showmode = false
 vim.o.showtabline = 2 -- Always show tabline
 vim.o.title = true
 vim.o.termguicolors = true -- Use true colors, required for some plugins
+vim.opt.termguicolors = true
+vim.opt.backupcopy = "yes"
 -- vim.o.ls                 = 0                         -- Doesn't seem to work
 -- vim.o.ch                 = 0                         -- Creates a bug with output messages not appearing correctly
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.signcolumn = "yes"
 vim.wo.cursorline = true
-
 -- Behavior
 vim.o.hlsearch = false
 vim.o.ignorecase = true -- Ignore case when using lowercase in search

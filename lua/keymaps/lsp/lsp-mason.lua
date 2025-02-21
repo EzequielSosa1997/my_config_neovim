@@ -1,6 +1,5 @@
 local okWich, with_key = pcall(require, "which-key")
 local ok, cmp = pcall(require, "cmp_nvim_lsp")
-local addCommand = require("keymaps.config.whitch-key")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local M = {}
 
@@ -16,22 +15,17 @@ M.on_attach = function(client, bufnr)
 	end, { desc = "Format current buffer with LSP" })
 end
 
-with_key.register({
-	name = "LSP",
-	a = { addCommand("lua vim.lsp.buf.code_action()"), "Code Action" },
-	r = { addCommand("lua vim.lsp.buf.rename()"), "Rename" },
-	d = { addCommand("lua vim.lsp.buf.definition()"), "goto definition" },
-	i = { addCommand("lua vim.lsp.buf.implementation()"), "goto implementation" },
-	F = { addCommand("lua require('telescope.builtin').lsp_references()"), "goto references" },
-	p = { addCommand("lua vim.lsp.buf.type_definition()"), "Type definition" },
-	K = { addCommand("lua vim.lsp.buf.signature_help()"), "Signature Documentation" },
-	k = { addCommand("lua  vim.lsp.buf.hover()"), "Hover Documentation" },
-	f = { addCommand("Format"), "Format" },
-	-- ds = { addCommand("lua require('telescope.builtin').lsp_document_symbols()"), "Documents Symbols" },
-	-- ws = { addCommand("lua require('telescope.builtin').lsp_dynamic_workspace_symbols()"), "Workspace Symbols" },
-	--	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	--	nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-	--	nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+with_key.add({
+  { "sl", group = "LSP" },
+  { "sla", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+  { "slr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
+  { "sld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition" },
+  { "sli", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Goto Implementation" },
+  { "slF", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", desc = "Goto References" },
+  { "slp", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Type Definition" },
+  { "slK", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Documentation" },
+  { "slk", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover Documentation" },
+  { "slf", "<cmd>Format<cr>", desc = "Format" },
 }, { prefix = "sl" })
 
 return M

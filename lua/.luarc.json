@@ -1,6 +1,0 @@
-{
-  "diagnostics.globals": ["vim", "restWindow", "sumWindow",
-        "addCommand",
-        "restWindowHorizotal",
-        "sumWindowHorizotal"]
-}
