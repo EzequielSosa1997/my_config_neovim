@@ -8,6 +8,7 @@ return {
   "hrsh7th/vim-vsnip",
   "saadparwaiz1/cmp_luasnip",
   "SirVer/ultisnips",
+  "quangnguyen30192/cmp-nvim-ultisnips",
   "dcampos/nvim-snippy",
   "dcampos/cmp-snippy",
   "honza/vim-snippets",
