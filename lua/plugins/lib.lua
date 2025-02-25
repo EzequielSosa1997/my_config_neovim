@@ -1,10 +1,6 @@
-
-
-return { 
-  "tpope/vim-fugitive",
-  "tpope/vim-surround" ,
+return {
   "mg979/vim-visual-multi",
   "Raimondi/delimitMate",
   "ojroques/nvim-bufdel",
-  "mrjones2014/nvim-ts-rainbow"
+  "mrjones2014/nvim-ts-rainbow",
 }
