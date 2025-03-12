@@ -3,7 +3,6 @@ return {
   config = function()
     local servers = {
       "black",
-      "eslint-lsp",
       "prettier",
       "stylua",
       "sonarlint-language-server",

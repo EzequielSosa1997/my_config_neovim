@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  confi = function()
+  config = function()
     local _treesitter, treesitter = pcall(require, "nvim-treesitter.configs")
 
     local colors = {
@@ -22,7 +22,6 @@ return {
         enable = true,
         disable = { "python", "css", "rust" },
       },
-      --ensure_installed = "all",
       ensure_installed = {
         "java",
         "rust",
@@ -37,23 +36,8 @@ return {
         "typescript",
         "prisma",
       },
-      -- ensure_installed = {"java", "rust", "python", "lua", "go", "html", "json", "sql", "dockerfile", "yaml", "css", "javascript", "typescript"},
       highlight = {
         enable = true,
-      },
-      rainbow = {
-        colors = {
-          colors.magenta,
-          colors.cyan,
-          colors.yellow,
-          colors.orange,
-          colors.red,
-          colors.blue,
-          colors.green,
-        },
-        enable = true,
-        extended_mode = true,
-        max_file_lines = nil,
       },
       textobjects = {
         select = {

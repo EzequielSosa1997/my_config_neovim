@@ -1,6 +1,6 @@
 return {
 "nvim-treesitter/nvim-treesitter-context",
-confi=function()
+config=function()
 local ok, context = pcall(require, "treesitter-context")
 
 if not ok then
@@ -18,8 +18,6 @@ context.setup({
 	separator = nil,
 	zindex = 20, -- The Z-index of the context window
 })
-end, 
-
-
+end,
 
 }
