@@ -10,3 +10,6 @@ nvm install 20
 nvm use 20
 npm i -g neovim
 sudo pacman -S npm
+paru -S stylua
+paru -S python-isort python-black
+npm install -g prettier @fsouza/prettierd
