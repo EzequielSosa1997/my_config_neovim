@@ -13,3 +13,12 @@ sudo pacman -S npm
 paru -S stylua
 paru -S python-isort python-black
 npm install -g prettier @fsouza/prettierd
+npm install -g prisma
+npm i -g bash-language-server
+sudo pacman -S shellcheck
+npm i -g typescript
+
+
+---
+command neovim 
+:MasonInstall shfmt

@@ -33,6 +33,7 @@ return {
           globals = { "vim" },
         },
       },
+      bashls = {},
     }
 
     mason_lspconfig.setup({
