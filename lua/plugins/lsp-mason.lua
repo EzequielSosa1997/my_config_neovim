@@ -25,7 +25,6 @@ return {
     })
 
     local servers_lsp = {
-      eslint = require("lib-plugins-lsp.lsp.lenguaje.linter"),
       lua_ls = {
         workspace = { checkThirdParty = true },
         telemetry = { enable = true },
@@ -34,6 +33,22 @@ return {
         },
       },
       bashls = {},
+      ts_ls = {
+        init_options = {
+          hostInfo = "neovim",
+          plugins = {
+            {
+              name = "typescript-eslint-language-service",
+              location = "/usr/local/lib/node_modules/typescript-eslint-language-service",
+            },
+          },
+          preferences = {
+            importModuleSpecifier = "relative",
+            useLabelForTypeImports = true,
+          },
+        },
+        filetypes = { "javascript", "typescript" },
+      },
     }
 
     mason_lspconfig.setup({

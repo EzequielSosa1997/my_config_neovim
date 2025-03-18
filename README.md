@@ -17,7 +17,8 @@ npm install -g prisma
 npm i -g bash-language-server
 sudo pacman -S shellcheck
 npm i -g typescript
-
+npm install -g typescript-eslint-language-service
+sudo pacman -S jq
 
 ---
 command neovim 

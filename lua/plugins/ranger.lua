@@ -12,7 +12,7 @@ return {
         ["or"] = ranger_nvim.OPEN_MODE.rifle,
       },
       ui = {
-        height = 0.9,
+        height = 0.95,
         width = 1,
         x = 0.9,
         y = 1,
