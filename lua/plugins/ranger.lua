@@ -18,7 +18,7 @@ return {
         y = 1,
       },
     })
-    vim.api.nvim_set_keymap("n", "<leader>e", "", {
+    vim.api.nvim_set_keymap("n", "<leader>y", "", {
       callback = function()
         require("ranger-nvim").open(true)
       end,

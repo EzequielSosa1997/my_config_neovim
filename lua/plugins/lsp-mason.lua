@@ -32,7 +32,9 @@ return {
           globals = { "vim" },
         },
       },
-      bashls = {},
+      bashls = {
+        filetypes = { "sh" },
+      },
       ts_ls = {
         init_options = {
           hostInfo = "neovim",

@@ -19,6 +19,7 @@ sudo pacman -S shellcheck
 npm i -g typescript
 npm install -g typescript-eslint-language-service
 sudo pacman -S jq
+sudo pacman -S bat
 
 ---
 command neovim 
