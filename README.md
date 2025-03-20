@@ -20,6 +20,7 @@ npm i -g typescript
 npm install -g typescript-eslint-language-service
 sudo pacman -S jq
 sudo pacman -S bat
+sudo pacman -S translate-shell
 
 ---
 command neovim 
