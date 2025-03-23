@@ -1,19 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   config = function()
-    local _treesitter, treesitter = pcall(require, "nvim-treesitter.configs")
-
-    local colors = {
-      red = "#bf616a",
-      orange = "#d08770",
-      yellow = "#ebcb8b",
-      blue = "#5e81ac",
-      green = "#a3be8c",
-      cyan = "#88c0d0",
-      magenta = "#b48ead",
-      purple = "#534671",
-      pink = "#FFA19F",
-    }
+    local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
       autotag = {
         enable = true,

@@ -1,11 +1,9 @@
-# 💤 LazyVim
+# Command
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim). Refer to
-the [documentation](https://lazyvim.github.io/installation) to get started.
+---
 
-commands
 
-sudo pacman -S python-pynvim
+## Linux
 nvm install 20
 nvm use 20
 npm i -g neovim
@@ -21,7 +19,9 @@ npm install -g typescript-eslint-language-service
 sudo pacman -S jq
 sudo pacman -S bat
 sudo pacman -S translate-shell
+npm i -g vscode-langservers-extracted
+npm i -g yaml-language-server
 
----
+## Nvim
 command neovim 
 :MasonInstall shfmt

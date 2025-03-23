@@ -22,6 +22,7 @@ return {
       callback = function()
         require("ranger-nvim").open(true)
       end,
+      desc = "Ranger",
     })
   end,
 }

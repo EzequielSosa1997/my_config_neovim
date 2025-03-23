@@ -1,12 +1,11 @@
 local okWich, with_key = pcall(require, "which-key")
-local addCommand = require("keymaps.config.whitch-key")
 
 if not okWich then
-	return
+  return
 end
 
 with_key.add({
-  { "<leader>f", group = "TELESCOPE" },
+  { "<leader>f", group = "Telescope" },
   { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "find file" },
   { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "find help" },
   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "find live grep" },

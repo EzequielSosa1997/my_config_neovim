@@ -8,6 +8,9 @@ require("keymaps.config.toggleterm")
 require("keymaps.config.api-rest")
 require("keymaps.config.git-fugitive")
 require("keymaps.config.gitsigns")
+require("keymaps.config.obsidian")
+require("keymaps.config.undotree")
+require("keymaps.config.lsp")
 
 local startWidth = require("keymaps.function.resizeWindows")
 
@@ -37,12 +40,12 @@ set("n", "<C-j>", "<c-w>j", default_opts)
 --TERMINAL
 vim.api.nvim_set_keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true })
 set(
-	"n",
-	"<C-t>",
-	"<cmd>terminal<cr><cmd>vertical resize"
-		.. tostring(startWidth)
-		.. "<cr><cmd>set nonumber<cr><cmd>set norelativenumber<cr>",
-	default_opts
+  "n",
+  "<C-t>",
+  "<cmd>terminal<cr><cmd>vertical resize"
+    .. tostring(startWidth)
+    .. "<cr><cmd>set nonumber<cr><cmd>set norelativenumber<cr>",
+  default_opts
 )
 set("n", "<leader>sd", "<cmd>w | source % <cr>", default_opts)
 set("n", "<leader>h", ":lua sumWindow()<cr>", default_opts)
