@@ -24,7 +24,7 @@ return {
         concealcursor = "nvic",
       },
       delete_to_trash = false,
-      skip_confirm_for_simple_edits = false,
+      skip_confirm_for_simple_edits = true,
       prompt_save_on_select_new_entry = true,
       cleanup_delay_ms = 2000,
       lsp_file_methods = {

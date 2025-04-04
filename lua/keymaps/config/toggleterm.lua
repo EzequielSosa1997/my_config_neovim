@@ -9,6 +9,7 @@ with_key.add({
   { "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", desc = "Node" },
   { "<leader>ts", "<cmd>lua _TRANSESEN_TOGGLE()<cr>", desc = "Trans ES -> EN" },
   { "<leader>te", "<cmd>lua _TRANSENES_TOGGLE()<cr>", desc = "Trans EN -> ES" },
+  { "<leader>tm", "<cmd>lua _COMMIT()<cr>", desc = "commit conventional" },
   { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Float" },
   { "<leader>tt", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal" },
   { "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical" },

@@ -10,4 +10,5 @@ with_key.add({
   { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "find help" },
   { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "find live grep" },
   { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "find buffers" },
+  { "<leader>fr", "<cmd>lua require('telescope').extensions.oil.oil()<cr>", desc = "find file Oil" },
 }, { prefix = "<leader>" })
