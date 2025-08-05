@@ -50,3 +50,5 @@ set(
 set("n", "<leader>sd", "<cmd>w | source % <cr>", default_opts)
 set("n", "<leader>h", ":lua sumWindow()<cr>", default_opts)
 set("n", "<leader>l", ":lua restWindow()<cr>", default_opts)
+set("n", "<C-]>", "<cmd>ToggleTerm 2<cr>", default_opts)
+set("n", "<C-[>", "<cmd>ToggleTerm 3<cr>", default_opts)

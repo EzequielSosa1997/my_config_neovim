@@ -2,19 +2,18 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    -- local ok, lualine = pcall(require, "lualine")
-    -- if ok then
-    --   return {}
-    -- end
-
-    -- require("lualine").setup()
-
     local function line_count()
       return vim.api.nvim_buf_line_count(0)
     end
+
+    local function datetime()
+      return os.date("%H:%M %A %B %Y/%m/%d")
+    end
+
     require("lualine").setup({
       options = {
         icons_enabled = true,
+        theme = "gruvbox_dark",
         component_separators = { left = "┃", right = "┃" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
@@ -33,28 +32,35 @@ return {
             "toggleterm",
           },
         },
-        ignore_focus = {},
         always_divide_middle = true,
         globalstatus = true,
         refresh = {
-          statusline = 1000,
-          tabline = 1000,
-          winbar = 1000,
+          statusline = 1200,
+          tabline = 1200,
+          winbar = 1200,
         },
       },
       sections = {
-        lualine_a = { "branch" },
-        lualine_b = { { "diff", icon = "" }, "diagnostics" },
+        lualine_a = {
+          { "branch", icon = "", padding = { left = 1, right = 1 } },
+        },
+        lualine_b = {
+          { "diff", icon = "", padding = { left = 1, right = 1 } },
+          { "diagnostics", padding = { left = 1, right = 1 } },
+        },
+        lualine_c = {},
         lualine_x = {},
-        lualine_y = { "filetype" },
+        lualine_y = {
+          { "filetype", icon_only = true, padding = { left = 1, right = 1 } },
+        },
         lualine_z = {
-          "fileformat",
-          { "os.date('%H:%M %A %B %Y/%m/%d')" },
-          { "filesize" },
-          "location",
-          "progress",
-          { line_count, icon = "﬘" },
-          "mode",
+          { "fileformat", padding = { left = 1, right = 1 } },
+          { datetime, icon = "", padding = { left = 1, right = 1 } },
+          { "filesize", padding = { left = 1, right = 1 } },
+          { "location", padding = { left = 1, right = 1 } },
+          { "progress", padding = { left = 1, right = 1 } },
+          { line_count, icon = "☰", padding = { left = 1, right = 1 } },
+          { "mode", padding = { left = 1, right = 1 } },
         },
       },
       inactive_sections = {
@@ -68,7 +74,7 @@ return {
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = { "nvim-tree" },
+      extensions = { "nvim-tree", "oil", "lazy" },
     })
   end,
 }

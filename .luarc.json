@@ -4,6 +4,8 @@
         "undefined-global"
     ],
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "restWindow",
+        "sumWindow"
     ]
 }
